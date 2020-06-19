@@ -17,7 +17,7 @@ describe('GET /api/hello', function(){
     request(app)
       .get('/api/hello')
       .expect(200)
-      .expect("Hello World!", done)
+      .expect("Hello Van Dep Trai!", done)
   })
 });
 
