@@ -35,7 +35,8 @@ blocks:
       jobs:
         - name: 'Job #1'
           commands:
-            - 'echo $VERCEL_ORG_ID, $VERCEL_PROJECT_ID'
+            - echo $V_ORG_ID
+            - echo $V_PROJECT_ID
 promotions:
   - name: Deploy to staging
     pipeline_file: deploy-staging.yml
