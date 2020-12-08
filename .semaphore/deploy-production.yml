@@ -1,4 +1,3 @@
-# This pipeline runs after semaphore.yml
 version: v1.0
 name: Deploy to production
 agent:
@@ -6,14 +5,19 @@ agent:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: Deploy to production 
+  - name: Deploy to production
     task:
       secrets:
         - name: now
       jobs:
-      - name: Deploy to Zeit Now 
-        commands:
-          - checkout 
-          - nvm use 
-          - npm i -g vercel
-          - vercel --token $ZEIT_TOKEN -e VERCEL_ORG_ID=$VERCEL_ORG_ID -e VERCEL_PROJECT_ID=$VERCEL_PROJECT_ID
+        - name: Deploy to Zeit Now
+          commands:
+            - checkout
+            - nvm use
+            - npm i -g vercel
+            - vercel --token $ZEIT_TOKEN -e VERCEL_ORG_ID=$VERCEL_ORG_ID -e VERCEL_PROJECT_ID=$VERCEL_PROJECT_ID
+      env_vars:
+        - name: VERCEL_ORG_ID
+          value: QmYy6pGW3vhF13iriwsNzXoGXwwSH7j9cFtwpKKHR9QR8v
+        - name: VERCEL_ORG_ID
+          value: zVMNylsp5dyUuHrJgz1yHhei

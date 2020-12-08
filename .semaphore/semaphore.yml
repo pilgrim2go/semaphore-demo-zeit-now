@@ -17,6 +17,7 @@ blocks:
             - cache restore
             - npm install
             - cache store
+    dependencies: []
   - name: Run tests
     task:
       jobs:
@@ -26,6 +27,15 @@ blocks:
             - nvm use
             - cache restore
             - npm test
+    dependencies:
+      - Install dependencies
+  - name: 'Block #3'
+    dependencies: []
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands:
+            - 'echo $VERCEL_ORG_ID, $VERCEL_PROJECT_ID'
 promotions:
   - name: Deploy to staging
     pipeline_file: deploy-staging.yml
