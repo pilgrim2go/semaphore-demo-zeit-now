@@ -15,4 +15,4 @@ blocks:
             - checkout
             - nvm use
             - npm i -g vercel
-            - echo "vercel --token $ZEIT_TOKEN -e VERCEL_ORG_ID=$V_PROJECT_ID -e VERCEL_ORG_ID=$V_ORG_ID"
+            - vercel --token $ZEIT_TOKEN -e VERCEL_ORG_ID=$V_PROJECT_ID -e VERCEL_ORG_ID=$V_ORG_ID
