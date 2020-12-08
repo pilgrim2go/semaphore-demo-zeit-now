@@ -29,17 +29,6 @@ blocks:
             - npm test
     dependencies:
       - Install dependencies
-  - name: 'Block #3'
-    dependencies: []
-    task:
-      secrets:
-        - name: now
-
-      jobs:
-        - name: 'Job #1'
-          commands:
-            - echo $V_ORG_ID
-            - echo $V_PROJECT_ID
 promotions:
   - name: Deploy to staging
     pipeline_file: deploy-staging.yml
