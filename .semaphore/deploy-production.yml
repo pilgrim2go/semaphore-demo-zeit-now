@@ -15,5 +15,5 @@ blocks:
         commands:
           - checkout 
           - nvm use 
-          - npm install now -g 
-          - now --token $ZEIT_TOKEN -n semaphore-demo-zeit-now
+          - npm i -g vercel
+          - vercel --token $ZEIT_TOKEN -e VERCEL_ORG_ID=$VERCEL_ORG_ID -e VERCEL_PROJECT_ID=$VERCEL_PROJECT_ID
